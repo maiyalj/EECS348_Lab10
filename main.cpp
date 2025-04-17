@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        cerr << "Usage: " << argv[0] << " <testFile>" << endl;
+        cerr << "Usage: " << argv[0] << " <test_file>" << endl;
         return 1;
     }
     ifstream file(argv[1]);
