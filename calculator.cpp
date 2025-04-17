@@ -108,24 +108,26 @@ bool isValidDouble(const string &s) {
     if (s.empty()) return false;
     int i = 0;
     if (s[i] == '+' || s[i] == '-') i++;
-    bool digits = false;
+    bool digitBeforeDec = false;
     while (i < s.size() && isdigit(s[i])) {
-        digits = true;
+        digitBeforeDec = true;
         i++;
     }
-    if (i == s.size()) return digits;
-    if (s[i] == '.') {
+    bool hasDec = false;
+    bool digitAfterDec = false;
+    if (i < s.size() && s[i] == '.') {
+        hasDec = true;
         i++;
-    }
-    if (i==s.size()) return digits;
-    if (s[i] == '.') {
-        i++;
-        bool decimal = false;
         while (i < s.size() && isdigit(s[i])) {
-            decimal = true;
+            digitAfterDec = true;
             i++;
         }
-        return digits && decimal && i == s.size();
     }
-    return false;
+    if (i != s.size()) return false;
+    if (hasDec) {
+        return digitBeforeDec || digitAfterDec;
+    } else {
+        return digitBeforeDec;
+    }
 }
+
