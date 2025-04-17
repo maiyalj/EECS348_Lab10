@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
         cout << "Input: " << line << endl;
         if (isValidDouble(line)) {
             string result = addDoubles(line, fixedNum);
-            cout << "Double valid. Result sum: " << fixedNum << " = " << result << endl;
+            cout << "Double valid.\nResult: " << fixedNum << " = " << result << endl;
         } else {
             cout << "Error: Double invalid." << endl;
         }
