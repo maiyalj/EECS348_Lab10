@@ -2,9 +2,9 @@
 #define __CALCULATOR_HPP
 
 #include <string>
+using namespace std;
 
-// this function should expect that `expression` has already been
-// validated and thus throw no exceptions
-double parse_number(const std::string &expression);
+bool isValidDouble(const string &expression);
+string addDoubles(const string &a, const string &b);
 
 #endif // __CALCULATOR_HPP
